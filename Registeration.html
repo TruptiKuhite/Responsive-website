@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/webdemo.css">
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Sign in Form</title>
+</head>
+<body>
+<main class="my-form">
+    <div class="cotainer">
+    <div class="row justify-content-center">
+    <div class="col-md-8">
+    <div class="card">
+    <div class="card-header" style="background-color: #0097A7; color: white">Registration Form</div>
+    <div class="card-body">
+<form action="regserver.jsp" name="myform" onsubmit="return onClick()">
+    <div class="form-group row">
+        <label for="first_Name" class="col-md-4 col-form-label text-md-right">First Name</label>
+    <div class="col-md-6">
+        <input type="text" class="form-control" name="firstname" id="firstname" onkeyup="checkFirstName(3,12)">
+        <small id="chkfirstname" class="text-danger"></small>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label for="last_name" class="col-md-4 col-form-label text-md-right">Last Name</label>
+    <div class="col-md-6">
+        <input type="text" class="form-control" name="lastname" id="lastname" onkeyup="checkLastName(5,12)">
+        <small id="chklastname" class="text-danger"></small>
+   	</div>
+    </div>
+    <div class="form-group row">
+        <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+    <div class="col-md-6">
+        <input type="text" id="email" class="form-control" name="email" onblur="checkEmail()">
+        <small id="chkemail" class="text-danger"></small>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+    <div class="col-md-6">
+        <input type="password" class="form-control" name="password" id="password" onblur="checkPassword()">
+        <small id="chkpassword" class="text-danger"></small>
+    </div>
+    </div>
+    <div class="form-group row">
+        <label for="confirm_password" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+    <div class="col-md-6">
+        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" onblur="checkConfirmPassword()">
+        <small id="chkconfirmpassword" class="text-danger"></small>
+    </div>
+    </div>
+	<div class="form-group row">
+        <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+    <div class="col-md-6">
+        <input type="text" class="form-control" name="phone" id="phone" onblur="checkPhone()">
+        <small id="chkphone" class="text-danger"></small>
+	</div>
+	</div>
+	<div class="form-group row">
+        <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
+	<div class="col-md-6">
+		<input type="text" class="form-control" name="address" id="address" onblur="checkAddress()">
+		<small id="chkaddress" class="text-danger"></small>
+	</div>
+    </div>
+    <div class="form-group row">
+    <label for="select_gender" class="col-md-4 col-form-label text-md-right">Select Gender</label>
+	<label class="radio inline">
+	<input type="radio" name="gender" value="male" id="male" onblur="checkGender()">
+	<span> Male </span>
+	</label>
+	<label class="radio inline"> 
+	<input type="radio" name="gender" value="female" id="female">
+	<span>Female </span>
+	</label>
+	<small id="chkfemale" class="text-danger"></small>
+	</div>
+	<div class="form-group row">
+        <label for="courses" class="col-md-4 col-form-label text-md-right">Select Courses</label>
+    <div class="col-md-6">
+    <input type="checkbox" name="checkbox" id="checkbox" value="java" onblur="checkCourses()">Java &nbsp;
+	<input type="checkbox" name="checkbox" id="checkbox" value="html">html &nbsp;
+	<input type="checkbox" name="checkbox" id="checkbox" value="css">css &nbsp;
+	<input type="checkbox" name="checkbox" id="checkbox" value="jsp">jsp &nbsp;
+	<small id="chkcheckbox" class="text-danger"></small>
+    </div>
+    </div>
+	<div class="form-group row">
+        <label for="select_city" class="col-md-4 col-form-label text-md-right">Select City</label>
+    <div class="col-md-6">
+	<select class="form-control" name="city" id="dropdown" onblur="checkDropdown()">
+    <option class="hidden"  selected disabled>Please select your City</option>
+    <option>Nagpur</option>
+    <option>Mumbai</option>
+    <option>Pune</option>
+    </select>
+    <small id="chkdropdown" class="text-danger" ></small>
+    </div>
+    </div>
+	<div class="col-md-6 offset-md-4">
+        <button type="submit" class="btn btn-primary" id="submit">Register</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+function onClick() {
+	if(document.getElementById('firstname').value=='' ||document.getElementById('lastname').value=='' ||document.getElementById('email').value=='' ||document.getElementById('password').value=='' ||document.getElementById('confirmpassword').value=='' ||document.getElementById('phone').value=='' ||document.getElementById('address').value=='' ||document.getElementById('female').value=='' ||document.getElementById('dropdown').value=='')
+		{
+		alert("Please Fill the Required fields!!");
+		document.getElementById('submit').disabled=false;
+		return false;
+		}
+	else if(document.getElementById('male').checked==false && document.getElementById('female').checked==false) 
+	{
+	  document.getElementById('chkfemale').innerHTML="* select the gender";
+	  document.getElementById('female').focus();
+	  return false;
+	}
+	else{
+		document.getElementById('submit').disabled=false;
+		return true;
+	}
+}
+function checkFirstName(min,max) {
+	var fname=document.getElementById('firstname').value;
+	var letters = /^[A-Za-z" "]+$/;
+	var fnamelen=fname.length;
+	if(fnamelen==0 ||fnamelen<min ||fnamelen>=max)
+		{
+		<!--alert("name should be between 3 to 12 char only");-->
+		document.getElementById('chkfirstname').innerHTML="*Name should be between 3 to 12 char only";
+		document.getElementById('firstname').focus();
+		return false;
+		}
+	else if(!fname.match(letters))
+		{
+		document.getElementById('chkfirstname').innerHTML="*Name should be in alphabet only";
+		document.getElementById('firstname').focus();
+		return false;
+		}
+	else{
+		document.getElementById('chkfirstname').innerHTML=" ";
+		return true;
+	}
+}
+function checkLastName(min,max) {
+	var lname=document.getElementById('lastname').value;
+	var letters = /^[A-Za-z" "]+$/;
+	var lnamelen=lname.length;
+	if(lnamelen==0 ||lnamelen<min ||lnamelen>=max)
+		{
+		// <!--alert("name should be between 5 to 12 char only");-->
+		document.getElementById('chklastname').innerHTML="*Name should be between 5 to 12 char only";
+		document.getElementById('lastname').focus();
+		return false;
+		}
+	else if(!lname.match(letters))
+		{
+		document.getElementById('chklastname').innerHTML="*Name should be in alphabet only";
+		document.getElementById('lastname').focus();
+		return false;
+		}
+	else{
+		document.getElementById('chklastname').innerHTML=" ";
+		return true;
+	}
+}
+function checkEmail() {
+	var email=document.getElementById('email').value;
+	var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(email==''||email==null)
+	{
+	 document.getElementById('chkemail').innerHTML="* email field is req";
+	 document.getElementById('email').focus();
+	 return false;
+	}
+	else if(!email.match(emailformat)) 
+	{
+	  document.getElementById('chkemail').innerHTML="* enter the proper email";
+	  document.getElementById('email').focus();
+	  return false;
+	}
+	else{
+		document.getElementById('chkemail').innerHTML=" ";
+		return true;
+	}
+}
+function checkPassword() {
+	var password=document.getElementById('password').value;
+	var passwordformat= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+	if(password==''||password==null)
+	{
+	 document.getElementById('chkpassword').innerHTML="* password field is req";
+	 document.getElementById('password').focus();
+	 return false;
+	}
+	else if(!password.match(passwordformat)) 
+	{
+	  document.getElementById('chkpassword').innerHTML="* enter the valid password";
+	  document.getElementById('password').focus();
+	  return false;
+	}
+	else
+	{
+		document.getElementById('chkpassword').innerHTML=" ";
+		return true;
+	}
+}
+function checkConfirmPassword(){
+	var password=document.getElementById('password').value;
+	var confirmpassword=document.getElementById('confirmpassword').value;
+	if(confirmpassword==''||confirmpassword==null)
+	{
+	 document.getElementById('chkconfirmpassword').innerHTML="* confirm password field is req";
+	 document.getElementById('confirmpassword').focus();
+	 return false;
+	}
+	else if(password!=confirmpassword)
+	{
+	 document.getElementById('chkconfirmpassword').innerHTML="* password should be same as above";
+	 document.getElementById('confirmpassword').focus();
+	 return false;
+	}
+	else if(password!=confirmpassword)
+	{
+	 document.getElementById('chkconfirmpassword').innerHTML="* password should be same as above";
+	 document.getElementById('chkconfirmpassword').focus();
+	 return false;
+	}
+	else
+	{
+		document.getElementById('chkconfirmpassword').innerHTML=" ";
+		return true;
+	}
+}
+function checkPhone() {
+	var phone=document.getElementById('phone').value;
+	var phoneformat= /^\d{10}$/;
+
+	if(phone==''||phone==null)
+		{
+		 document.getElementById('chkphone').innerHTML="* phone field is req";
+		 document.getElementById('phone').focus();
+		 return false;
+		}
+	else if(!phone.match(phoneformat)) 
+		{
+		  document.getElementById('chkphone').innerHTML="* enter the valid phone no";
+		  document.getElementById('phone').focus();
+		  return false;
+		}
+	else
+	{
+		document.getElementById('chkphone').innerHTML=" ";
+		return true;
+	}
+}
+function checkAddress() {
+	var address=document.getElementById('address').value;
+	var addressformat= /^[0-9a-zA-Z" "]+$/;
+
+	if(address==''||address==null)
+		{
+		 document.getElementById('chkaddress').innerHTML="* address field is req";
+		 document.getElementById('address').focus();
+		 return false;
+		}
+	else if(!address.match(addressformat)) 
+		{
+		  document.getElementById('chkaddress').innerHTML="* enter the proper address";
+		  document.getElementById('address').focus();
+		  return false;
+		}
+	else
+	{
+		document.getElementById('chkaddress').innerHTML=" ";
+		return true;
+	}
+}
+function checkDropdown() {
+	var dropdown=document.getElementById('dropdown').value;
+	if(dropdown==''||dropdown=='Please select your City')
+		{
+		 document.getElementById('chkdropdown').innerHTML="* select the city";
+		 document.getElementById('dropdown').focus();
+		 return false;
+		}
+	else
+	{
+		document.getElementById('chkdropdown').innerHTML=" ";
+		return false;
+	}
+}
+function checkCourses() {
+	if(document.getElementById('checkbox').checked==false)
+		{
+		 document.getElementById('chkcheckbox').innerHTML="* select the courses";
+		 document.getElementById('checkbox').focus();
+		 return false;
+		}
+	else
+	{
+		document.getElementById('chkcheckbox').innerHTML=" ";
+		return false;
+	}
+}
+function checkGender() {
+	if(document.getElementById('male').checked==false && document.getElementById('female').checked==false) 
+	{
+	  document.getElementById('chkfemale').innerHTML="* select the gender";
+	  document.getElementById('female').focus();
+	  return false;
+	}
+	else
+	{
+		document.getElementById('chkfemale').innerHTML=" ";
+		return true;
+	}
+}
+</script>
+
+<div><% String email=(String)session.getAttribute("email");
+				   if(email==null){
+					   
+				   }
+				   else{
+					   %>
+					   <script>
+					   swal("Sorry!!", "<%=email%>", "error");</script>
+					   <%
+					   session.setAttribute("email", null);
+				   }
+				   %></div>
+				   
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
